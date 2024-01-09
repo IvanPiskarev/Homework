@@ -1,0 +1,109 @@
+Часть 1 уровень 1
+
+x = float(input("Введите вклад"))
+p = float(input("Введите количество процентов"))
+y = float(input("Введите нужную сумму"))
+time = 0
+while x < y:
+	time = time + 1
+	x = int(x * (100 + p) / 100)
+print(time)
+
+Часть 1 уровень 2
+
+n = int(input("Введите число повторений"))
+while n > 0:
+	print("for - частный случай цикла while")
+	n = n - 1
+
+Часть 1 уровень 3
+
+x = int(input("Введите число"))
+s = 0 
+while x > 0:
+    t = x % 10
+    s = s + t
+    x = x // 10
+print(s)
+
+Часть 2 уровень 1
+
+l = [1, 4, 1, 6, "hello", "a", 5, "hello"]
+h = {i for i in l if l.count(i) > 1}
+print(h)
+
+Часть 2 уровень 2
+
+Не понял как делать от слова совсем, хотел бы получить какое-то обьяснение 
+
+Часть 2 уровень 3
+
+d = {"Name1": "id1", "Name2": "id2", "Name3": "id3"}
+o = {value:key for key, value in d.items()}
+print(o)
+
+Часть 3 уровень 1
+
+def area(a, b, c):
+	p = (a + b + c) / 2
+	x = p * (p - a) * (p - b) * (p - c)
+	s = x ** (0.5)
+	return s
+
+Часть 3 уровень 2
+
+s = "fnenfen fejfejfjefjefj fejjf fej feu9fw9ef fje euu eifi ee fejfje"
+d = list(s.split())
+def words(d):
+	x = [i for i in d if len(i) < 5]
+	return x
+print(words(d))
+
+Часть 3 уровень 3
+
+Не совсем понял как делать. Понимаю, что как-то нужно сравнить по первым числам, но не знаю как именно.
+
+Часть 4 уровень 1
+
+import json
+login = input("Введите логин")
+password = input("Введите пароль")
+def register(login, password):
+	data = {}
+	data[login] = password
+	with open("register.json", "w") as f:
+		json.dump(data, f)
+register(login, password)
+
+Часть 4 уровень 2
+
+import json
+data = {"test": "123"}
+with open("data.json", "w") as f:
+	json.dump(data, f)
+login = input("Введите логин")
+password = input("Введите пароль")
+def register(login, password):
+	if login not in data.keys():
+		data[login] = password
+		with open("register.json", "w") as f:
+			json.dump(data, f)
+		print("Вы успешно зарегистрированы")
+	else:
+		print("Логин занят")
+register(login, password)
+		
+Часть 4 уровень 3
+
+import json
+data = {"test": "123"}
+with open("data.json", "w") as f:
+	json.dump(data, f)
+login = input("Введите логин")
+password = input("Введите пароль")
+def login_function(login, password):
+	if login in data.keys() and password in data.values():
+			print("Успешный вход в систему")
+	else:
+		print("Неправильный логин или пароль")
+login_function(login, password)
