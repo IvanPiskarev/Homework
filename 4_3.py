@@ -1,7 +1,6 @@
 import json
-data = {"test": "123"}
-with open("data.json", "w") as f:
-	json.dump(data, f)
+with open("data.json", "r") as f:
+		data = json.load(f)
 login = input("Введите логин")
 password = input("Введите пароль")
 def login_function(login, password):
